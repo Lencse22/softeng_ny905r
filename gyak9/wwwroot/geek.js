@@ -1,25 +1,22 @@
 ﻿var viccek;
 
-fetch("/questions.json")
-    .then(r => r.json())
-    .then(d => adatÉrkezett(d));
-
-function letöltés(adat) {
-    let ide = document.getElementById("ide");
-    console.log(`${adat.length} kérdés érketett`)
-    letöltésBefejeződött(d)
+function letöltés() {
+    fetch('/jokes.json')
+        .then(response => response.json())
+        .then(data => letöltésBefejeződött(data))
 }
 
 
-
-    function letöltésBefejeződött(d) {
-        console.log("Sikeres letöltés")
-        console.log(d)
-        viccek = d;
-        for (var i = 0; i < viccek.length; i++) {
-            console.log(viccek[i].questionText)
-            let elem = document.createElement("li")
-            elem.innerHTML = viccek[i].questionText
-            ide.appendChild(elem)
-        }
+function letöltésBefejeződött(d) {
+    console.log("Sikeres letöltés")
+    console.log(d)
+    viccek = d;
+    var geek = document.getElementById("geek")
+    for (var i = 0; i < viccek.length; i++) {
+        var újelem = document.createElement("div")
+        újelem.innerHTML = viccek[i].question
+        geek.appendChild(újelem)
     }
+}
+window.onload = letöltés();
+console.log(viccek)
