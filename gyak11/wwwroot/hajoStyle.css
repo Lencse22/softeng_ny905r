@@ -1,0 +1,53 @@
+﻿html, body {
+    height: 100%;
+}
+
+div {
+    margin: 10px;
+    border: 1px solid fuchsia
+}
+
+#kulso {
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+}
+
+#belso {
+    display:flex;
+    flex-direction:row;
+    flex-grow:1;
+}
+
+#gombok {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
+
+#kephely {
+    overflow:hidden;
+    flex-shrink:0;
+
+}
+
+#kerdes {
+}
+
+#válszok {
+    flex-grow:1;
+    flex-shrink:1;
+}
+
+.gomb {
+    padding: 20px;
+    width: 80px;
+}
+
+.kattintható:hover {
+    background-color: fuchsia;
+    color: white;
+}
+
+.kerdes {
+}
